@@ -12,12 +12,15 @@ jobs:
         with:
           flutter-version: '2.10.0'
           channel: stable
-      - name: Build apk
-        run: |
-          flutter --version
-          flutter pub get
-          flutter format --set-exit-if-changed .
-          flutter analyze
-          flutter test
-          flutter build apk
-          flutter build appbundle
+      - name: flutter version
+        run: flutter --version
+      - name: flutter pub get
+        run: flutter pub get
+      - name: flutter analyze
+        run: flutter analyze
+      - name: flutter test
+        run: flutter test
+      - name: build apk
+        run: flutter build apk
+      - name: build appbundle
+        run: flutter build appbundle
