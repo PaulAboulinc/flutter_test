@@ -21,4 +21,4 @@ then
 fi
 
 echo "Run sonar-scanner"
-sonar-scanner
+sonar-scanner -Dsonar.login="$SONARQUBE_TOKEN"

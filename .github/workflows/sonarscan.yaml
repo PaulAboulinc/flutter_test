@@ -1,5 +1,7 @@
 name: SonarQube
 on: push
+env:
+  SONARQUBE_TOKEN: ${{secrets.SONARQUBE_TOKEN}}
 jobs:
   run_sonar_scanner:
     runs-on: ubuntu-latest
