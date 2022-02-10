@@ -12,5 +12,8 @@ jobs:
         with:
           flutter-version: '2.10.0'
           channel: stable
+      env:
+        SONARQUBE_TOKEN: ${{ secrets.SONARQUBE_TOKEN }}
+      - run: echo $SONARQUBE_TOKEN
       - run: ./run_sonar_scanner.sh
         timeout-minutes: 5
