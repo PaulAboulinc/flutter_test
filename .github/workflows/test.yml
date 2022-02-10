@@ -11,4 +11,6 @@ jobs:
     steps:
       - name: step 1
         ## Reference your environment variables
-        run: echo "$SONARQUBE_TOKEN" > key
+        run: |
+          echo "$SONARQUBE_TOKEN" > key
+          cat key
