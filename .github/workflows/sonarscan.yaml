@@ -1,9 +1,16 @@
 name: SonarQube
 on: push
 jobs:
-  run_qa:
+  run_sonar_scanner:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - run: ./install_sonarscanner.sh
+      - uses: actions/setup-java@v1
+        with:
+          java-version: '12.x'
+      - uses: subosito/flutter-action@v2
+        with:
+          flutter-version: '2.10.0'
+          channel: stable
+      - run: ./run_sonar_scanner.sh
         timeout-minutes: 5

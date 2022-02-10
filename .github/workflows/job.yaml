@@ -12,11 +12,6 @@ jobs:
         with:
           flutter-version: '2.10.0'
           channel: stable
-      - name: Scanner
-        uses: sonarsource/sonarqube-scan-action@master
-        env:
-          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-          SONAR_HOST_URL: ${{ secrets.SONAR_HOST_URL }}
       - name: flutter version
         run: flutter --version
       - name: flutter pub get
