@@ -1,13 +1,10 @@
-on: push
 name: SonarQube
+on: push
 jobs:
-  sonarqube:
-    name: SonarQube Trigger
+  run_qa:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@master
-      - name: SonarQube Scan
-        uses: kitabisa/sonarqube-action@v1.1.0
-        with:
-          host: ${{ secrets.SONARQUBE_TOKEN }}
-          login: ${{ secrets.SONARQUBE_HOST }}
+      - uses: actions/checkout@v2
+      - run: ./run-qa.sh
+      - run: sonar-scanner
+        timeout-minutes: 5
