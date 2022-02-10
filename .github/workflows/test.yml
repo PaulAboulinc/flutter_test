@@ -2,7 +2,8 @@ name: env_test
 ## Triggers the workflow on when there is a push, or
 ## pull request on the main branch
 on: [pull_request, push]
-
+env:
+  SONARQUBE_TOKEN: ${{secrets.SONARQUBE_TOKEN}}
 jobs:
   test:
     ## The type of runner that the job will run on
@@ -10,4 +11,4 @@ jobs:
     steps:
       - name: step 1
         ## Reference your environment variables
-        run: echo "The API key is:${{secrets.SONARQUBE_TOKEN}}"
+        run: echo "$SONARQUBE_TOKEN" > key
