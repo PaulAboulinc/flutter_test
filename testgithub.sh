@@ -1,0 +1,1 @@
+echo "$SONARQUBE_TOKEN"
