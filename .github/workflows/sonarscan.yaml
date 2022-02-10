@@ -5,6 +5,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - run: ./run-qa.sh
+      - run: ./install_sonarscanner.sh
       - run: sonar-scanner
         timeout-minutes: 5
