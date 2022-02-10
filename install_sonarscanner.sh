@@ -7,3 +7,4 @@ pwd=`pwd`
 export PATH=$(pwd)/bin:$PATH
 cd ../../
 rm sonarscanner.zip
+sonar-scanner
