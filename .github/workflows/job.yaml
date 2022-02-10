@@ -1,4 +1,4 @@
-name: build
+name: Main Workflow
 on: push
 jobs:
   build-apk:
