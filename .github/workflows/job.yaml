@@ -1,5 +1,7 @@
 name: Main Workflow
 on: push
+env:
+  SONARQUBE_TOKEN: ${{secrets.SONARQUBE_TOKEN}}
 jobs:
   workflow:
     runs-on: ubuntu-latest
@@ -24,3 +26,5 @@ jobs:
         run: flutter build apk
       - name: build appbundle
         run: flutter build appbundle
+      - name: SonarQube
+        run: ./run_sonar_scanner.sh
